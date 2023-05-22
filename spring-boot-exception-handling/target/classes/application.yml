@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: BOOK-SERVICE
+  datasource:
+    url: jdbc:h2:~/exception
+    driver-class-name: org.h2.Driver
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+logging:
+  level:
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG
+  output:
+    ansi:
+      enabled: always
+      console-logging: true
+      console-pattern:
+        error: "\u001b[31m%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %logger{15} - %msg%n\u001b[0m"
+        warn: "\u001b[33m%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %logger{15} - %msg%n\u001b[0m"
+        info: "\u001b[32m%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %logger{15} - %msg%n\u001b[0m"
+        debug: "\u001b[34m%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %logger{15} - %msg%n\u001b[0m"
+        trace: "\u001b[36m%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %logger{15} - %msg%n\u001b[0m"
